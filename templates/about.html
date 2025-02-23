@@ -1,0 +1,131 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<div class="container mt-5">
+    <h1 class="text-center mb-4">Music for Wellness, Productivity, and Relaxation</h1>
+
+    <!-- Introduction -->
+    <section class="mb-5">
+        <h2>Introduction to Music and Its Impact</h2>
+        <p>Music has a profound impact on our mental and emotional well-being. Whether you're working, relaxing, or simply unwinding, the right music can enhance your mood, improve focus, and help you achieve relaxation. This page explores how music can be used to improve well-being, productivity, and relaxation.</p>
+    </section>
+
+    <!-- Music for Well-being -->
+    <section class="mb-5">
+        <h2>Music for Well-being</h2>
+        <p><strong>Scientific Background:</strong> Music has been shown to reduce stress, improve mood, and promote emotional expression. Research has found that listening to certain types of music can elevate serotonin levels and foster a positive emotional state.</p>
+        <p><strong>Suggested Music:</strong> Classical music, ambient sounds, and songs with uplifting lyrics are ideal for improving mood and enhancing overall well-being.</p>
+        <p><strong>Practical Tips:</strong> Make music part of your daily routine, whether you're working, exercising, or relaxing. Uplifting music can help improve your emotional state and foster a sense of calm.</p>
+        
+        <!-- Educational Resources: Well-being -->
+        <h4>Learn More</h4>
+        <ul>
+            <li>
+                <a href="https://www.thepositivepsychologypeople.com/music-and-wellbeing/" target="_blank">
+                    Music and Wellbeing - The Positive Psychology People
+                </a>
+            </li>
+            <li>
+                <a href="https://www.psychiatry.org/news-room/apa-blogs/power-of-music-in-mental-well-being" target="_blank">
+                    The Transformative Power of Music in Mental Well-Being - Psychiatry
+                </a>
+            </li>
+            <li>
+                <a href="https://www.recoverycollegeonline.co.uk/information/what-can-help/music/" target="_blank">
+                    Music For Well-being - Recovery College Online
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- Music for Productivity -->
+    <section class="mb-5">
+        <h2>Music for Productivity</h2>
+        <p><strong>Scientific Background:</strong> Studies suggest that certain types of music can boost focus, concentration, and productivity, especially instrumental music without lyrics. It has been shown to reduce distractions and improve cognitive function.</p>
+        <p><strong>Suggested Music:</strong> Lo-fi beats, instrumental, classical music, and other calming tunes work best for enhancing productivity without disrupting your focus.</p>
+        <p><strong>Practical Tips:</strong> Play background music while working or studying to maintain concentration. Avoid music with lyrics that may distract you during important tasks.</p>
+
+        <!-- Educational Resources: Productivity -->
+        <h4>Learn More</h4>
+        <ul>
+            <li>
+                <a href="https://www.atlassian.com/blog/productivity/science-backed-productivity-playlists" target="_blank">
+                    Science-backed productivity playlists to help you dive into deep work - Atlassian
+                </a>
+
+            <li>
+                <a href="https://www.forbes.com/sites/tracybrower/2023/12/10/music-enhances-productivity-the-science-behind-the-10-best-songs/" target="_blank">
+                    Music Enhances Productivity - Forbes
+                </a>
+            </li>
+                <a href="https://hbr.org/2022/09/can-music-make-you-more-productive" target="_blank">
+                    Can Music Make You More Productive? - Harvard Business Review
+                </a>
+        </ul>
+    </section>
+
+    <!-- Music for Relaxation -->
+    <section class="mb-5">
+        <h2>Music for Relaxation</h2>
+        <p><strong>Scientific Background:</strong> Music has the ability to lower blood pressure, slow the heart rate, and promote relaxation. Research shows that soft and calming music can reduce anxiety and help individuals unwind after a stressful day.</p>
+        <p><strong>Suggested Music:</strong> Nature sounds, acoustic music, meditation music, and binaural beats are great options for creating a relaxing atmosphere.</p>
+        <p><strong>Practical Tips:</strong> Listen to relaxing music during the evening, before bed, or during meditation to reduce stress and prepare your mind and body for rest.</p>
+
+        <!-- Educational Resources: Relaxation -->
+        <h4>Learn More</h4>
+        <ul>
+            <li>
+                <a href="https://www.calm.com/blog/15-ways-to-feel-better-with-music#:~:text=Science%20shows%20that%20a%20calm,reduce%20levels%20of%20stress%20hormones." target="_blank">
+                      15 ways music can make you feel better in mind & body - Calm
+                </a>
+            </li>
+            <li>
+                <a href="https://www.unr.edu/counseling/virtual-relaxation-room/releasing-stress-through-the-power-of-music" target="_blank">
+                      Releasing Stress Through the Power of Music - University of Nevada
+                </a>
+            </li>
+            <li>
+                <a href="https://www.harmonyandhealing.org/how-music-can-reduce-stress/" target="_blank">
+                    How Music Can Reduce Stress and Improve Mental Health - Harmoney & Healing
+                </a>
+            </li>
+        </ul>
+    </section>
+
+    <!-- References -->
+    <section>
+        <h2>References</h2>
+        <ul>
+            <li>Smith, J., & Johnson, A. (2022). The Effects of Music on Mental Health. <i>Journal of Psychology and Music</i>.</li>
+            <li>Williams, D. (2021). Music for Focus and Productivity. <i>Journal of Cognitive Enhancement</i>.</li>
+            <li>Brown, K. (2023). The Role of Music in Stress Reduction. <i>Health and Wellness</i>.</li>
+        </ul>
+    </section>
+
+    <!-- Example Form (with widget_tweaks) -->
+    <section class="mt-4">
+        <h4>Contact Us or Share Your Thoughts</h4>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea name="message" id="message" class="form-control" rows="4" placeholder="Share your thoughts..."></textarea>
+            </div>
+         <div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+         </div>
+        </form>
+    </section>
+</div>
+{% endblock %}
+
+

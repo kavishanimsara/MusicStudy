@@ -1,0 +1,32 @@
+{% extends "admin/base.html" %}
+
+{% block title %}Music Study Admin{% endblock %}
+
+{% block branding %}
+    <h1 style="color: white; font-size: 24px; padding: 10px;">Music Study Admin</h1>
+{% endblock %}
+
+{% block extrastyle %}
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        #header {
+            background: #d4aa00; /* Match the navbar color */
+            padding: 15px;
+        }
+        .module h2, .module caption {
+            background: #d4aa00; /* Module header background */
+            color: white;
+        }
+        input[type="submit"], .button {
+            background: #ffcc00;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background: #e6b800;
+        }
+    </style>
+{% endblock %}

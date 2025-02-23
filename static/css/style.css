@@ -1,0 +1,59 @@
+/* General Navbar Styling */
+.navbar {
+    background-color: #343a40; /* Dark background */
+    padding: 10px;
+}
+
+.navbar-brand {
+    color: #ffffff !important; /* White text for the brand */
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.navbar-nav .nav-link {
+    color: #dddddd; /* Light gray text for links */
+    margin: 0 10px;
+    font-size: 1.1rem;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.navbar-nav .nav-link:hover {
+    color: #ffffff; /* White text on hover */
+}
+
+/* Active Link Styling */
+.navbar-nav .nav-link.active {
+    color: #007bff !important; /* Highlight color for active links */
+    font-weight: bold;
+    border-bottom: 2px solid #007bff; /* Underline the active link */
+}
+
+/* Mobile Menu Button Styling */
+.navbar-toggler {
+    border: none;
+    color: #ffffff;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=UTF8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28111, 111, 111, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        margin: 5px 0;
+    }
+}
+body {
+    background: url('/static/images/download.jpg') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the entire page */
+    margin: 0;
+    font-family: Arial, sans-serif; /* Adjust text styles as needed */
+}
+.container {
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: Make content area semi-transparent for better readability */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    padding: 20px;
+}
+
+  

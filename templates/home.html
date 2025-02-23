@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container my-5">
+  <div class="row align-items-center">
+    <div class="col-md-6">
+      <h1 class="display-4">Welcome to Music Study App</h1>
+      <p class="lead">
+        Boost your productivity with carefully curated music designed for focused study sessions.
+      </p>
+      <a href="{% url 'music_categories' %}" class="btn btn-primary btn-lg">Explore Music</a>
+      <a href="{% url 'study_tracker' %}" class="btn btn-outline-secondary btn-lg">Start Timer</a>
+    </div>
+    <div class="col-md-6">
+      <img src="{% static 'images/download.jpg' %}" alt="Study Music" class="img-fluid">
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <h2 class="text-center">Why Use Music While Studying?</h2>
+  <div class="row">
+    <div class="col-md-4 text-center">
+      <i class="bi bi-headphones fs-1 text-primary"></i>
+      <h5>Stay Focused</h5>
+      <p>Eliminate distractions and stay on track.</p>
+    </div>
+    <div class="col-md-4 text-center">
+      <i class="bi bi-heart fs-1 text-danger"></i>
+      <h5>Reduce Stress</h5>
+      <p>Feel calmer and more in control during study sessions.</p>
+    </div>
+    <div class="col-md-4 text-center">
+      <i class="bi bi-clock fs-1 text-success"></i>
+      <h5>Time Management</h5>
+      <p>Use our study timer to manage your schedule effectively.</p>
+    </div>
+  </div>
+</div>
+
+<!-- Chatbot Section -->
+<div >
+  <button id="chatbot-toggle-button" class="btn btn-primary">Chat with Us</button>
+</div>
+<div class="container mt-2"></div>
+ <div>
+ <form id="chatbot-form">
+  <input type="text" id="chatbot-input" placeholder="Type a message">
+  <button type="submit" class="btn btn-primary">Send</button>
+ </form>
+ <div id="chatbot-messages"></div>
+</div>
+
+{% endblock %}
+

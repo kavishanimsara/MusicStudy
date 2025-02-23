@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container text-center my-5">
+  <h1>Study Tracker</h1>
+  <p>Stay focused and track your study sessions effectively.</p>
+  
+  <!-- Timer Input -->
+  <div class="timer-settings py-3">
+    <label for="customMinutes" class="form-label">Set Timer (Minutes):</label>
+    <input type="number" id="customMinutes" class="form-control w-25 mx-auto" placeholder="Enter minutes" min="1" />
+    <button id="setTimerBtn" class="btn btn-primary mt-3">Set Timer</button>
+  </div>
+
+  <!-- Timer Display -->
+  <div class="timer-box py-5">
+    <h2 id="time" class="display-1">00:00</h2>
+    <button id="startBtn" class="btn btn-success btn-lg">Start</button>
+    <button id="resetBtn" class="btn btn-danger btn-lg">Reset</button>
+    <button id="stopAlarmBtn" class="btn btn-warning btn-lg" style="display: none;">Stop Alarm</button>
+  </div>
+</div>
+
+<!-- Alarm Audio -->
+<audio id="alarmSound" src="/static/audio/alarm.mp3"></audio>
+
+<script>
+  let timer, minutes = 0, seconds = 0;
+  const stopAlarmBtn = document.getElementById("stopAlarmBtn");
+
+  function updateTimer() {
+    document.getElementById("time").textContent = 
+      `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+  }
+
+  document.getElementById("setTimerBtn").addEventListener("click", () => {
+    const customMinutes = parseInt(document.getElementById("customMinutes").value);
+    if (!isNaN(customMinutes) && customMinutes > 0) {
+      minutes = customMinutes;
+      seconds = 0;
+      updateTimer();
+      alert(`Timer set to ${customMinutes} minute(s).`);
+    } else {
+      alert("Please enter a valid number greater than 0.");
+    }
+  });
+
+  document.getElementById("startBtn").addEventListener("click", () => {
+    if (!timer && minutes > 0) {
+      timer = setInterval(() => {
+        if (seconds === 0) {
+          if (minutes === 0) {
+            clearInterval(timer);
+            timer = null;
+                  // Play the alarm sound
+          const alarmSound = document.getElementById("alarmSound");
+          alarmSound.volume = 1.0; // Ensure the volume is high
+          alarmSound.play().catch((error) => {
+            console.error("Failed to play alarm sound:", error);
+            alert("Time's up! Enable sound to hear the alarm.");
+          });
+          stopAlarmBtn.style.display = "inline-block";
+            alert("Time's up! Great job staying focused!");
+          } else {
+            minutes--;
+            seconds = 59;
+          }
+        } else {
+          seconds--;
+        }
+        updateTimer();
+      }, 1000);
+    } else if (minutes === 0) {
+      alert("Set a timer first before starting!");
+    }
+  });
+
+  document.getElementById("resetBtn").addEventListener("click", () => {
+    clearInterval(timer);
+    timer = null;
+    minutes = 0;
+    seconds = 0;
+    updateTimer();
+    alert("Timer reset.");
+  });
+
+  updateTimer();
+    // Stop the alarm sound and hide the "Stop Alarm" button
+    alarmSound.pause();
+  alarmSound.currentTime = 0; // Reset audio playback to the beginning
+  stopAlarmBtn.style.display = "none";
+  
+// Add event listener to stop the alarm sound
+stopAlarmBtn.addEventListener("click", () => {
+  alarmSound.pause(); // Stop the alarm sound
+  alarmSound.currentTime = 0; // Reset audio playback to the beginning
+  stopAlarmBtn.style.display = "none"; // Hide the "Stop Alarm" button
+  });
+
+// Initialize the timer display
+  updateTimer();
+  </script>
+{% endblock %}
+
